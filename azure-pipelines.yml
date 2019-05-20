@@ -14,6 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
 
+steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
