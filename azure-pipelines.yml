@@ -14,26 +14,8 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
-    command: 'restore'
-    restoreSolution: '**/*.config'
+    command: 'run'
     feedsToUse: 'select'
     versioningScheme: 'off'
-    
-- task: UseDotNet@1
-  inputs:
-    packageType: 'sdk'
-    version: '2.2'
-
-steps:
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
