@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
+  vmImage: 'Ubuntu 16.04'
 
 variables:
   solution: '**/*.csproj'
@@ -33,10 +34,8 @@ steps:
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**'
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+- task: DotNetCoreCLI@2
+  inputs:  
+    command: test  
+    projects: '**/*Test/*.csproj'  
+    arguments: '--configuration $(buildConfiguration)'
