@@ -10,11 +10,11 @@
 In the solution to this challenge, we are looking for the following:
 
 * Simplicity
-  *  Functions should be small
+  * Functions should be small
 * Readability
-  *  Functions and variable names should strike a balance between being short and clear
+  * Functions and variable names should strike a balance between being short and clear
 * Testability
-  *  Try to include at least a few tests for your core logic code
+  * Try to include at least a few tests for your core logic code
 
 ## What we do not expect
 
@@ -22,9 +22,9 @@ These are things we do not care about in this solution, where possible, avoid sp
 these elements.
 
 * Extensive use of 3rd party libraries
-  *  Some use of libraries is fine, but we don’t need to see lots of dependency injection or fancy log libraries
+  * Some use of libraries is fine, but we don’t need to see lots of dependency injection or fancy log libraries
 * Enterprise directory structure
-  *  This is a small application, it is not necessary to demonstrate the layout needed for much larger applications
+  * This is a small application, it is not necessary to demonstrate the layout needed for much larger applications
 
 ___
 
@@ -40,13 +40,13 @@ The program should also handle the scenario where the turtle doesn’t reach the
 
 The board is a grid of n by m number of tiles:
 
-*  5x4 Board
-*  The starting position is a tile (x,y) and the initial direction the turtle is facing (that is: north, east, south, west):
-*  Starting position: x = 0, y = 1, dir = North
-*  The exit point is a tile (x,y)
-*  Exit point: x = 4, y = 2
-*  The mines are defined as a list of tiles (x,y).
-*  Turtle actions can be either a move (m) one tile forward or rotate (r) 90 degrees to the right.
+* 5x4 Board
+* The starting position is a tile (x,y) and the initial direction the turtle is facing (that is: north, east, south, west):
+* Starting position: x = 0, y = 1, dir = North
+* The exit point is a tile (x,y)
+* Exit point: x = 4, y = 2
+* The mines are defined as a list of tiles (x,y).
+* Turtle actions can be either a move (m) one tile forward or rotate (r) 90 degrees to the right.
 
 ### Expected Input
 
