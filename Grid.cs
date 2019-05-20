@@ -21,20 +21,21 @@ namespace TurtleChallenge
         public bool CheckOutOfBounds(){
             if (this.turtle.position.X > this.width || this.turtle.position.X < 0 
             || this.turtle.position.Y > this.height || this.turtle.position.Y < 0){
-                
                 this.gameLost = true;
+                return true;
             }
 
-            return this.gameLost;
+            return false;
         }
 
         public bool CheckReachedExit(){
             if (this.turtle.position.Equals(this.exit.position)){
                 this.gameWon = true;
                 this.exit.reached = true;
+                return true;
             }
 
-            return this.gameWon;
+            return false;
         }
 
         public bool CheckHitMine(){
@@ -42,10 +43,11 @@ namespace TurtleChallenge
                 if (this.turtle.position.Equals(mine.position)){
                     this.gameLost = true;
                     mine.detonated = true;
+                    return true;
                 }
             }
 
-            return this.gameLost;
+            return false;
         }
     }   
 }

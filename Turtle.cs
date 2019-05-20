@@ -20,25 +20,18 @@ namespace TurtleChallenge
                 case Direction.West:
                     this.position.X--;
                     break;
+                default:
+                    break;
             }
             return this.position;
         }
 
         public Direction Rotate(){
-            switch (this.direction){
-                case Direction.North:
-                    this.direction = Direction.East;
-                    break;
-                case Direction.South:
-                    this.direction = Direction.West;
-                    break;
-                case Direction.East:
-                    this.direction = Direction.South;
-                    break;
-                case Direction.West:
-                    this.direction = Direction.North;
-                    break;
+            this.direction++;
+            if(this.direction > Direction.West){
+                this.direction = Direction.North;
             }
+
             return this.direction;
         }
     }
