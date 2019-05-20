@@ -24,6 +24,8 @@
                     case 'R':
                         game.turtle.Rotate();
                         break;
+                    default:
+                        break;
                 }
 
                 if (game.CheckOutOfBounds()){
@@ -57,7 +59,7 @@
             {
                 grid = (Grid)serializer.Deserialize(reader);          
             }
-            
+
             return grid;
         }
     }
