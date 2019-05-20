@@ -1,5 +1,7 @@
 # Turtle Challenge
 
+[![Build Status](https://dev.azure.com/EamonnReilly/TurtleChallenge/_apis/build/status/DarthRatz.TurtleChallenge?branchName=master)](https://dev.azure.com/EamonnReilly/TurtleChallenge/_build/latest?definitionId=2&branchName=master)
+
 ## What we expect
 
 In the solution to this challenge, we are looking for the following:
