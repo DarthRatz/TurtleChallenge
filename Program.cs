@@ -11,23 +11,41 @@
         static void Main(string[] args)
         {
             Program p = new Program();
-            Grid init =  p.DeserializeGrid("init.xml");
-            Console.WriteLine(init.ToString());
-            Console.WriteLine(init.mines.Count);
+            Grid game =  p.DeserializeGrid("settings.xml");
 
-            Turtle user = init.turtle;
-            String instructions = File.ReadAllText("input.txt");
+            string instructions = File.ReadAllText("moves.txt");
             foreach (var instruction in instructions.ToCharArray())
             {
                 switch (instruction)
                 {
                     case 'M':
-                        user.Move();
+                        game.turtle.Move();
                         break;
                     case 'R':
-                        user.Rotate();
+                        game.turtle.Rotate();
                         break;
                 }
+
+                if (game.CheckOutOfBounds()){
+                    Console.WriteLine("Out of bounds");
+                }
+
+                if (game.CheckReachedExit()){
+                    Console.WriteLine("Success");
+                }
+
+                if (game.CheckHitMine()){
+                    Console.WriteLine("Mine hit");
+                }
+
+                if(game.gameLost || game.gameWon){
+                    break;
+                }
+            }
+            
+            if(!game.gameLost && !game.gameWon){
+                Console.WriteLine("still in danger");
+                game.gameLost = true;
             }
         }
 
