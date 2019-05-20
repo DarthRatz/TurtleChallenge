@@ -32,3 +32,8 @@ steps:
     command: 'test'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
