@@ -1,6 +1,8 @@
 # Turtle Challenge
 
 [![Build Status](https://dev.azure.com/EamonnReilly/TurtleChallenge/_apis/build/status/DarthRatz.TurtleChallenge?branchName=master)](https://dev.azure.com/EamonnReilly/TurtleChallenge/_build/latest?definitionId=2&branchName=master)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DarthRatz/TurtleChallenge.svg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/DarthRatz/TurtleChallenge.svg)
 
 ## What we expect
 
