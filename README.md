@@ -1,5 +1,6 @@
 # Turtle Challenge
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/48e8feae0af54f8db9c21f12e0eb1569)](https://app.codacy.com/app/eamonnreilly87/TurtleChallenge?utm_source=github.com&utm_medium=referral&utm_content=DarthRatz/TurtleChallenge&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://dev.azure.com/EamonnReilly/TurtleChallenge/_apis/build/status/DarthRatz.TurtleChallenge?branchName=master)](https://dev.azure.com/EamonnReilly/TurtleChallenge/_build/latest?definitionId=2&branchName=master)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DarthRatz/TurtleChallenge.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/DarthRatz/TurtleChallenge.svg)
