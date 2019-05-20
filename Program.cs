@@ -51,12 +51,13 @@
 
         private Grid DeserializeGrid(string filename)
         {
-            Grid grid = new Grid();
+            Grid grid = null;
             XmlSerializer serializer = new XmlSerializer(typeof(Grid));
             using (Stream reader = new FileStream(filename, FileMode.Open))
             {
                 grid = (Grid)serializer.Deserialize(reader);          
             }
+            
             return grid;
         }
     }
