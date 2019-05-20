@@ -14,6 +14,18 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
 
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.config'
+    feedsToUse: 'select'
+    versioningScheme: 'off'
+    
+- task: UseDotNet@1
+  inputs:
+    packageType: 'sdk'
+    version: '2.2'
+
 steps:
 - task: VSBuild@1
   inputs:
