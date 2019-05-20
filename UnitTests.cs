@@ -10,7 +10,7 @@ namespace TurtleChallenge
             // Arrange
             Grid grid = new Grid();
             grid.width = 3;
-            grid.height = 3;
+            grid.height = 2;
             grid.turtle = new Turtle();
             grid.turtle.position = new Position(3,3);
             grid.exit = new Exit();
@@ -24,7 +24,7 @@ namespace TurtleChallenge
             Assert.True(grid.CheckReachedExit());
             Assert.True(grid.CheckHitMine());
             Assert.True(grid.CheckOutOfBounds());
-            Assert.Equal("width:3 height:3", grid.ToString());
+            Assert.Equal("width:3 height:2", grid.ToString());
         }
 
         [Fact]
