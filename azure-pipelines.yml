@@ -26,3 +26,17 @@ steps:
     command: 'run'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    feedsToUse: 'select'
+    versioningScheme: 'byBuildNumber'
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: '**\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
