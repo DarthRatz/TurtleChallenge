@@ -5,12 +5,12 @@
 In the solution to this challenge, we are looking for the following:
 
 * Simplicity
-* Functions should be small
+  * Functions should be small
 * Readability
-* Functions and variable names should strike a balance between being short and
+  * Functions and variable names should strike a balance between being short and
 clear
 * Testability
-* Try to include at least a few tests for your core logic code
+  * Try to include at least a few tests for your core logic code
 
 ## What we do not expect
 
@@ -18,11 +18,13 @@ These are things we do not care about in this solution, where possible, avoid sp
 these elements.
 
 * Extensive use of 3rd party libraries
-* Some use of libraries is fine, but we don’t need to see lots of dependency
+  * Some use of libraries is fine, but we don’t need to see lots of dependency
 injection or fancy log libraries
 * Enterprise directory structure
-* This is a small application, it is not necessary to demonstrate the layout needed
+  * This is a small application, it is not necessary to demonstrate the layout needed
 for much larger applications
+
+___
 
 ## Problem Definition
 
@@ -49,10 +51,10 @@ south, west):
 
 ### Expected Input
 
-* A game settings file including board size, start position, exit position and a list of mine positions.
-* A moves file containing a list of moves (either ‘m’ or ‘r’)
+A game settings file including board size, start position, exit position and a list of mine positions.
+A moves file containing a list of moves (either ‘m’ or ‘r’)
 
 ### Expected Output
 
-* A message on the console describing the result, one of Success, Mine hit, still in danger or Out
+A message on the console describing the result, one of Success, Mine hit, still in danger or Out
 of bounds.
