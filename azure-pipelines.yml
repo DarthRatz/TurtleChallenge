@@ -32,9 +32,3 @@ steps:
     command: 'test'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
-
-- task: DotNetCoreCLI@2
-  inputs:  
-    command: test  
-    projects: '**/*Test/*.csproj'  
-    arguments: '--configuration $(buildConfiguration)'
