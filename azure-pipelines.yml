@@ -12,17 +12,17 @@ pool:
 variables:
   solution: '**/*.csproj'
   buildPlatform: 'Any CPU'
-  buildConfiguration: 'Debug'
+  buildConfiguration: 'Release'
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     feedsToUse: 'select'
-    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'run'
     feedsToUse: 'select'
-    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
