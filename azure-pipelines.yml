@@ -30,12 +30,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    feedsToUse: 'select'
-    versioningScheme: 'byBuildNumber'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
