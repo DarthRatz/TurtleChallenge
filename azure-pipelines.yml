@@ -33,7 +33,9 @@ steps:
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
-- task: PublishTestResults@2
+- task: DotNetCoreCLI@2
   inputs:
-    testResultsFormat: 'XUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    command: 'test'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+    feedsToUse: 'select'
+    versioningScheme: 'byBuildNumber'
