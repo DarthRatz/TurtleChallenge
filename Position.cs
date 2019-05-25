@@ -13,23 +13,13 @@ namespace TurtleChallenge
         public int Y { get => y; set => y = value; }
 
         public Position(int x, int y){
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
         }
 
         public override string ToString(){
-            return "X:" + x.ToString() + " Y:" + y.ToString();
-        }
-
-        public override bool Equals(object obj)
-        {         
-            if (obj == null || GetType() != obj.GetType()){
-                return false;
-            }
-            
-            Position p = (Position)obj;
-            return (this.X == p.X) && (this.Y == p.Y);
-        }        
+            return "X:" + X.ToString() + " Y:" + Y.ToString();
+        }      
 
         public bool Equals(Position other)
         {
