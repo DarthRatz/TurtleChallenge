@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-16.04'
 
 variables:
   solution: '**/*.csproj'
@@ -16,21 +16,25 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
     command: 'build'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
+
 - task: DotNetCoreCLI@2
+  displayName: Run Application
   inputs:
     command: 'run'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
 - task: DotNetCoreCLI@2
+  displayName: Run Unit Tests
   inputs:
     command: 'test'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude=[xunit.*]*'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
