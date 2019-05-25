@@ -2,9 +2,10 @@ namespace TurtleChallenge
 {
     public class Mine{
         internal Position position;
-        internal bool detonated = false;
+        internal bool detonated;
 
         internal Mine(){
+            detonated = false;
         }
 
         public bool Detonated { get => detonated; set => detonated = value; }

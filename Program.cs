@@ -5,7 +5,7 @@ namespace TurtleChallenge
 {
     class Program
     {
-        static void Main()
+        public static void Main(String[] args)
         {
             GamesState gs = GamesState.Playing;
             Game game =  new Game("settings.xml");
@@ -39,14 +39,13 @@ namespace TurtleChallenge
                     gs = GamesState.MineHit;
                 }
 
-                if(game.GameLost || game.GameWon){
+                if(gs > GamesState.Playing){
                     break;
                 }
             }
             
-            if(!game.GameLost && !game.GameWon){
+            if(gs == GamesState.Playing){
                 gs = GamesState.StillInDanger;
-                game.GameLost = true;
             }
 
             Console.Out.Write(gs.ToString());
