@@ -1,38 +1,52 @@
+using System;
+
 namespace TurtleChallenge
 {
     public class Turtle{
-        public Position position;
-        public Direction direction;
-        public Turtle(){
+        internal Position position;
+        internal Direction direction;
+
+        internal Turtle(){
         }
 
+        public Position Position { get => position; set => position = value; }
+        public Direction Direction { get => direction; set => direction = value; }
+
         public Position Move(){
-            switch (this.direction){
+            switch (this.Direction){
                 case Direction.North:
-                    this.position.Y++;
+                    this.Position.Y++;
                     break;
                 case Direction.South:
-                    this.position.Y--;
+                    this.Position.Y--;
                     break;
                 case Direction.East:
-                    this.position.X++;
+                    this.Position.X++;
                     break;
                 case Direction.West:
-                    this.position.X--;
+                    this.Position.X--;
                     break;
                 default:
-                    break;
+                    throw new NotSupportedException();
             }
-            return this.position;
+            return this.Position;
         }
 
         public Direction Rotate(){
-            this.direction++;
-            if(this.direction > Direction.West){
-                this.direction = Direction.North;
+            this.Direction++;
+            if(this.Direction > Direction.West){
+                this.Direction = Direction.North;
             }
 
-            return this.direction;
+            return this.Direction;
         }
+    }
+
+    [Flags]
+    public enum Direction { 
+        North = 0,
+        East = 1, 
+        South = 2, 
+        West = 3 
     }
 }

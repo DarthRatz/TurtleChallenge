@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <width>5</width>
-  <height>4</height>
-  <turtle>
-    <position>
-      <X>0</X>
+<Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Grid>
+    <width>5</width>
+    <height>4</height>
+  </Grid>
+  <Turtle>
+    <Position>
+      <X>1</X>
       <Y>1</Y>
-    </position>
+    </Position>
     <direction>North</direction>
-  </turtle>
-  <exit>
-    <position>
+  </Turtle>
+  <Exit>
+    <Position>
       <X>4</X>
       <Y>2</Y>
-    </position>
-  </exit>
-  <mines>
+    </Position>
+  </Exit>
+  <Mines>
     <Mine>
-      <position>
+      <Position>
         <X>2</X>
         <Y>1</Y>
-      </position>
+      </Position>
     </Mine>
       <Mine>
-    <position>
+    <Position>
       <X>3</X>
       <Y>1</Y>
-    </position>
+    </Position>
   </Mine>
     <Mine>
-      <position>
+      <Position>
         <X>3</X>
         <Y>3</Y>
-      </position>
+      </Position>
     </Mine>
-  </mines>
-</Grid>
+  </Mines>
+</Game>

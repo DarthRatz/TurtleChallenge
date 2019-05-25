@@ -1,74 +1,64 @@
-﻿namespace TurtleChallenge
+﻿using System;
+using System.IO;
+    
+namespace TurtleChallenge
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Xml.Serialization;
-
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Program p = new Program();
-            Grid game =  p.DeserializeGrid("settings.xml");
+            GamesState gs = GamesState.Playing;
+            Game game =  new Game("settings.xml");
 
             string instructions = File.ReadAllText("moves.txt");
-            foreach (var instruction in instructions.ToCharArray())
+            foreach (var instruction in instructions)
             {
                 switch (instruction)
                 {
                     case 'M':
-                        game.turtle.Move();
+                    case 'm':
+                        game.Turtle.Move();
                         break;
                     case 'R':
-                        game.turtle.Rotate();
+                    case 'r':
+                        game.Turtle.Rotate();
                         break;
                     default:
-                        break;
+                        throw new NotSupportedException();
                 }
 
                 if (game.CheckOutOfBounds()){
-                    Console.WriteLine("Out of bounds");
+                    gs = GamesState.OutOfBounds;
                 }
 
                 if (game.CheckReachedExit()){
-                    Console.WriteLine("Success");
+                    gs = GamesState.Success;
                 }
 
                 if (game.CheckHitMine()){
-                    Console.WriteLine("Mine hit");
+                    gs = GamesState.MineHit;
                 }
 
-                if(game.gameLost || game.gameWon){
+                if(game.GameLost || game.GameWon){
                     break;
                 }
             }
             
-            if(!game.gameLost && !game.gameWon){
-                Console.WriteLine("still in danger");
-                game.gameLost = true;
-            }
-        }
-
-        private Grid DeserializeGrid(string filename)
-        {
-            Grid grid = null;
-            XmlSerializer serializer = new XmlSerializer(typeof(Grid));
-            using (Stream reader = new FileStream(filename, FileMode.Open))
-            {
-                grid = (Grid)serializer.Deserialize(reader);          
+            if(!game.GameLost && !game.GameWon){
+                gs = GamesState.StillInDanger;
+                game.GameLost = true;
             }
 
-            return grid;
+            Console.Out.Write(gs.ToString());
         }
     }
-    
+
     [Flags]
-    public enum Direction { 
-        North,
-        East, 
-        South, 
-        West 
-    };
+    public enum GamesState { 
+        Playing = 0,
+        OutOfBounds = 1,
+        Success = 2, 
+        MineHit = 3, 
+        StillInDanger = 4 
+    }
 }

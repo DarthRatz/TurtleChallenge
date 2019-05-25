@@ -1,17 +1,24 @@
+using System;
+
 namespace TurtleChallenge
 {
-    public class Position{
-        public int X, Y;
-        public Position(){
-        }
+    public class Position : IEquatable<Position>{
+        internal int x;
+        internal int y;
+        
+        internal Position(){
+        }    
+
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }
 
         public Position(int x, int y){
-            this.X = x;
-            this.Y = y;
+            this.x = x;
+            this.y = y;
         }
 
         public override string ToString(){
-            return "X:" + X.ToString() + " Y:" + Y.ToString();
+            return "X:" + x.ToString() + " Y:" + y.ToString();
         }
 
         public override bool Equals(object obj)
@@ -22,11 +29,16 @@ namespace TurtleChallenge
             
             Position p = (Position)obj;
             return (this.X == p.X) && (this.Y == p.Y);
+        }        
+
+        public bool Equals(Position other)
+        {
+            return (this.X == other.X) && (this.Y == other.Y);
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return X.GetHashCode() * Y.GetHashCode();
         }
     }
 }
