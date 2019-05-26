@@ -31,6 +31,18 @@
                 "${workspaceFolder}/TurtleChallenge.csproj"
             ],
             "problemMatcher": "$tsc"
-        }
+        },
+        {
+            "label": "test with coverage",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=./lcov.info"
+            ],
+            "problemMatcher": "$tsc"
+        },
     ]
 }

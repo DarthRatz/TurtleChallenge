@@ -45,11 +45,23 @@ The program should also handle the scenario where the turtle doesn’t reach the
 The board is a grid of n by m number of tiles:
 
 * 5x4 Board
+
+![5x4 Board](README/grid1.png "5x4 Board")
+
 * The starting position is a tile (x,y) and the initial direction the turtle is facing (that is: north, east, south, west):
 * Starting position: x = 0, y = 1, dir = North
+
+![Starting position](README/grid2.png "Starting position")
+
 * The exit point is a tile (x,y)
 * Exit point: x = 4, y = 2
+
+![Exit point](README/grid3.png "Exit point")
+
 * The mines are defined as a list of tiles (x,y).
+
+![Mines](README/grid4.png "Mines points")
+
 * Turtle actions can be either a move (m) one tile forward or rotate (r) 90 degrees to the right.
 
 ### Expected Input

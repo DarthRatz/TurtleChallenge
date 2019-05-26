@@ -6,7 +6,7 @@
   </Grid>
   <Turtle>
     <Position>
-      <X>1</X>
+      <X>0</X>
       <Y>1</Y>
     </Position>
     <direction>North</direction>
@@ -20,7 +20,7 @@
   <Mines>
     <Mine>
       <Position>
-        <X>2</X>
+        <X>1</X>
         <Y>1</Y>
       </Position>
     </Mine>

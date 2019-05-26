@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Grid>
+    <width>5</width>
+    <height>4</height>
+  </Grid>
+  <Turtle>
+    <Position>
+      <X>0</X>
+      <Y>1</Y>
+    </Position>
+    <direction>North</direction>
+  </Turtle>
+  <Exit>
+    <Position>
+      <X>4</X>
+      <Y>2</Y>
+    </Position>
+  </Exit>
+  <Mines>
+    <Mine>
+      <Position>
+        <X>1</X>
+        <Y>1</Y>
+      </Position>
+    </Mine>
+      <Mine>
+    <Position>
+      <X>3</X>
+      <Y>1</Y>
+    </Position>
+  </Mine>
+    <Mine>
+      <Position>
+        <X>3</X>
+        <Y>3</Y>
+      </Position>
+    </Mine>
+  </Mines>
+</Game>

@@ -8,9 +8,9 @@ namespace TurtleChallenge
         public static void Main(String[] args)
         {
             GamesState gs = GamesState.Playing;
-            Game game =  new Game("settings.xml");
+            Game game =  new Game("inputs/settings.xml");
 
-            string instructions = File.ReadAllText("moves.txt");
+            string instructions = File.ReadAllText("inputs/moves.txt");
             foreach (var instruction in instructions)
             {
                 switch (instruction)

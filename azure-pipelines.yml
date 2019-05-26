@@ -34,7 +34,7 @@ steps:
   displayName: Run Unit Tests
   inputs:
     command: 'test'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude=[xunit.*]*'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
     feedsToUse: 'select'
     versioningScheme: 'byBuildNumber'
 
