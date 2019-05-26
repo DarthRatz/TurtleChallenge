@@ -3,6 +3,7 @@
 [![Build Status](https://dev.azure.com/EamonnReilly/TurtleChallenge/_apis/build/status/DarthRatz.TurtleChallenge?branchName=master)](https://dev.azure.com/EamonnReilly/TurtleChallenge/_build/latest?definitionId=2&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/EamonnReilly/TurtleChallenge/2.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4195bfe624074cb680e31e9ef66fb56f)](https://www.codacy.com/app/eamonnreilly87/TurtleChallenge?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DarthRatz/TurtleChallenge&amp;utm_campaign=Badge_Grade)
+![GitHub](https://img.shields.io/github/license/DarthRatz/TurtleChallenge.svg)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/DarthRatz/TurtleChallenge.svg)
 ![GitHub top language](https://img.shields.io/github/languages/top/DarthRatz/TurtleChallenge.svg)

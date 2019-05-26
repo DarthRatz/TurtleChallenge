@@ -38,9 +38,21 @@
             "type": "process",
             "args": [
                 "test",
+                "${workspaceFolder}/TurtleChallenge.csproj",
                 "/p:CollectCoverage=true",
-                "/p:CoverletOutputFormat=lcov",
-                "/p:CoverletOutput=./lcov.info"
+                "/p:CoverletOutputFormat=\"opencover,lcov\"",
+                "/p:CoverletOutput=./lcov",
+                "/p:Exclude=[xunit.*]*"                
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/TurtleChallenge.csproj",
             ],
             "problemMatcher": "$tsc"
         },
