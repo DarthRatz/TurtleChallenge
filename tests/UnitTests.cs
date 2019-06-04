@@ -83,188 +83,80 @@ namespace TurtleChallenge
         public static void GameSuccessTest()
         {
             Game g1 = new Game("inputs/testSettings1.xml");
-            GamesState gs = GamesState.Playing;
 
             string instructions = File.ReadAllText("inputs/testMoves1.txt");
             foreach (var instruction in instructions)
             {
-                switch (instruction)
-                {
-                    case 'M':
-                    case 'm':
-                        g1.Turtle.Move();
-                        break;
-                    case 'R':
-                    case 'r':
-                        g1.Turtle.Rotate();
-                        break;
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                if (g1.CheckOutOfBounds()){
-                    gs = GamesState.OutOfBounds;
-                }
-
-                if (g1.CheckReachedExit()){
-                    gs = GamesState.Success;
-                }
-
-                if (g1.CheckHitMine()){
-                    gs = GamesState.MineHit;
-                }
-
-                if(gs > GamesState.Playing){
+                if(g1.ExecuteInstruction(instruction) > GamesState.Playing){
                     break;
                 }
             }
             
-            if(gs == GamesState.Playing){
-                gs = GamesState.StillInDanger;
+            if(g1.GameState == GamesState.Playing){
+                g1.GameState = GamesState.StillInDanger;
             }
 
-            Assert.Equal(GamesState.Success, gs);
+            Assert.Equal(GamesState.Success, g1.GameState);
         }
 
         [Fact]
         public static void GameOutOfBoundsTest()
         {
             Game g1 = new Game("inputs/testSettings1.xml");
-            GamesState gs = GamesState.Playing;
 
             string instructions = File.ReadAllText("inputs/testMoves2.txt");
             foreach (var instruction in instructions)
             {
-                switch (instruction)
-                {
-                    case 'M':
-                    case 'm':
-                        g1.Turtle.Move();
-                        break;
-                    case 'R':
-                    case 'r':
-                        g1.Turtle.Rotate();
-                        break;
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                if (g1.CheckOutOfBounds()){
-                    gs = GamesState.OutOfBounds;
-                }
-
-                if (g1.CheckReachedExit()){
-                    gs = GamesState.Success;
-                }
-
-                if (g1.CheckHitMine()){
-                    gs = GamesState.MineHit;
-                }
-
-                if(gs > GamesState.Playing){
+                if(g1.ExecuteInstruction(instruction) > GamesState.Playing){
                     break;
                 }
             }
             
-            if(gs == GamesState.Playing){
-                gs = GamesState.StillInDanger;
+            if(g1.GameState == GamesState.Playing){
+                g1.GameState = GamesState.StillInDanger;
             }
 
-            Assert.Equal(GamesState.OutOfBounds, gs);
+            Assert.Equal(GamesState.OutOfBounds, g1.GameState);
         }
 
         [Fact]
         public static void GameMineHitTest()
         {
             Game g1 = new Game("inputs/testSettings1.xml");
-            GamesState gs = GamesState.Playing;
 
             string instructions = File.ReadAllText("inputs/testMoves3.txt");
             foreach (var instruction in instructions)
             {
-                switch (instruction)
-                {
-                    case 'M':
-                    case 'm':
-                        g1.Turtle.Move();
-                        break;
-                    case 'R':
-                    case 'r':
-                        g1.Turtle.Rotate();
-                        break;
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                if (g1.CheckOutOfBounds()){
-                    gs = GamesState.OutOfBounds;
-                }
-
-                if (g1.CheckReachedExit()){
-                    gs = GamesState.Success;
-                }
-
-                if (g1.CheckHitMine()){
-                    gs = GamesState.MineHit;
-                }
-
-                if(gs > GamesState.Playing){
+                if(g1.ExecuteInstruction(instruction) > GamesState.Playing){
                     break;
                 }
             }
             
-            if(gs == GamesState.Playing){
-                gs = GamesState.StillInDanger;
+            if(g1.GameState == GamesState.Playing){
+                g1.GameState = GamesState.StillInDanger;
             }
 
-            Assert.Equal(GamesState.MineHit, gs);
+            Assert.Equal(GamesState.MineHit, g1.GameState);
         }
 
         [Fact]
         public static void GameStillInDangerTest()
         {
             Game g1 = new Game("inputs/testSettings1.xml");
-            GamesState gs = GamesState.Playing;
 
             string instructions = File.ReadAllText("inputs/testMoves4.txt");
             foreach (var instruction in instructions)
             {
-                switch (instruction)
-                {
-                    case 'M':
-                    case 'm':
-                        g1.Turtle.Move();
-                        break;
-                    case 'R':
-                    case 'r':
-                        g1.Turtle.Rotate();
-                        break;
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                if (g1.CheckOutOfBounds()){
-                    gs = GamesState.OutOfBounds;
-                }
-
-                if (g1.CheckReachedExit()){
-                    gs = GamesState.Success;
-                }
-
-                if (g1.CheckHitMine()){
-                    gs = GamesState.MineHit;
-                }
-
-                if(gs > GamesState.Playing){
+                if(g1.ExecuteInstruction(instruction) > GamesState.Playing){
                     break;
                 }
             }
             
-            if(gs == GamesState.Playing){
-                gs = GamesState.StillInDanger;
+            if(g1.GameState == GamesState.Playing){
+                g1.GameState = GamesState.StillInDanger;
             }
 
-            Assert.Equal(GamesState.StillInDanger, gs);
+            Assert.Equal(GamesState.StillInDanger, g1.GameState);
         }
     }
 }
