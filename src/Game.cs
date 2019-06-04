@@ -6,6 +6,8 @@ namespace TurtleChallenge
 {
     public class Game
     {
+        readonly XmlSerializer serializer = new XmlSerializer(typeof(Game));
+        
         internal List<Mine> mines1;
         internal Exit exit1;
         internal Turtle turtle1;
@@ -20,8 +22,7 @@ namespace TurtleChallenge
         public List<Mine> Mines { get => mines1; set => mines1 = value; }
 
         public Game(string filename)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+        {            
             using (Stream reader = new FileStream(filename, FileMode.Open))
             {
                 var g = (Game)serializer.Deserialize(reader);
