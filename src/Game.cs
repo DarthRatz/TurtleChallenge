@@ -5,9 +5,10 @@ using System.Xml.Serialization;
 
 namespace TurtleChallenge
 {
-    public class Game
+    public class Game : IDisposable
     {
         readonly XmlSerializer serializer = new XmlSerializer(typeof(Game));
+        private FileStream fs;
         
         internal List<Mine> mines1;
         internal Exit exit1;
@@ -28,8 +29,9 @@ namespace TurtleChallenge
         public Game(string filename)
         {            
             this.GameState = GamesState.Playing;
+            OpenResource(filename);
 
-            using (Stream reader = new FileStream(filename, FileMode.Open))
+            using (Stream reader = fs)
             {
                 var g = (Game)serializer.Deserialize(reader);
 
@@ -38,6 +40,9 @@ namespace TurtleChallenge
                 this.Exit = g.Exit;
                 this.Mines = g.Mines;
             }
+
+            CloseResource();
+            Dispose();
         }
 
         public bool CheckOutOfBounds()
@@ -106,8 +111,23 @@ namespace TurtleChallenge
 
             return GameState;
         }
+
+        public void OpenResource(string path)
+        {
+            this.fs = new FileStream(path, FileMode.Open);
+        }
+
+        public void CloseResource()
+        {
+            this.fs.Close();
+        }
+
+        public void Dispose()
+        {
+            this.fs.Dispose();
+        }
     }
-    
+
     [Flags]
     public enum GamesState { 
         Playing = 0,
