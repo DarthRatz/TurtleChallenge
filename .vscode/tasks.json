@@ -52,7 +52,7 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/TurtleChallenge.csproj",
+                "${workspaceFolder}/TurtleChallenge.csproj"
             ],
             "problemMatcher": "$tsc"
         },
