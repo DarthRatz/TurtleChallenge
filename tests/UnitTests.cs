@@ -4,7 +4,7 @@ using Xunit;
 
 namespace TurtleChallenge
 {
-    public class UnitTests{
+    public static class UnitTests{
         [Fact]
         public static void PositionTest()
         {
