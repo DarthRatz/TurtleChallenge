@@ -7,23 +7,57 @@ namespace TurtleChallenge
     {
         public static void Main(String[] args)
         {
+            GamesState gs = GamesState.Playing;
             Game game =  new Game("inputs/settings.xml");
-            string instructions = File.ReadAllText("inputs/moves.txt");
 
+            string instructions = File.ReadAllText("inputs/moves.txt");
             foreach (var instruction in instructions)
             {
-                game.ExecuteInstruction(instruction);
+                switch (instruction)
+                {
+                    case 'M':
+                    case 'm':
+                        game.Turtle.Move();
+                        break;
+                    case 'R':
+                    case 'r':
+                        game.Turtle.Rotate();
+                        break;
+                    default:
+                        throw new NotSupportedException();
+                }
 
-                if(game.GameState > GamesState.Playing){
+                if (game.CheckOutOfBounds()){
+                    gs = GamesState.OutOfBounds;
+                }
+
+                if (game.CheckReachedExit()){
+                    gs = GamesState.Success;
+                }
+
+                if (game.CheckHitMine()){
+                    gs = GamesState.MineHit;
+                }
+
+                if(gs > GamesState.Playing){
                     break;
                 }
             }
             
-            if(game.GameState == GamesState.Playing){
-                game.GameState = GamesState.StillInDanger;
+            if(gs == GamesState.Playing){
+                gs = GamesState.StillInDanger;
             }
 
-            Console.Out.Write(game.GameState.ToString());
+            Console.Out.Write(gs.ToString());
         }
+    }
+
+    [Flags]
+    public enum GamesState { 
+        Playing = 0,
+        OutOfBounds = 1,
+        Success = 2, 
+        MineHit = 3, 
+        StillInDanger = 4 
     }
 }
