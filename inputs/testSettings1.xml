@@ -24,12 +24,12 @@
         <Y>1</Y>
       </Position>
     </Mine>
-      <Mine>
-    <Position>
-      <X>3</X>
-      <Y>1</Y>
-    </Position>
-  </Mine>
+    <Mine>
+      <Position>
+        <X>3</X>
+        <Y>1</Y>
+      </Position>
+    </Mine>
     <Mine>
       <Position>
         <X>3</X>
