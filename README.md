@@ -1,6 +1,8 @@
 # Turtle Challenge
 
-![Turtle Challenge](README/turtle.png "Turtle Challenge")
+![Turtle](README/turtle.png "Turtle")
+![Mine](README/mine.png "Mine")
+![Exit](README/exit.png "Exit")
 
 [![Build Status](https://dev.azure.com/EamonnReilly/TurtleChallenge/_apis/build/status/DarthRatz.TurtleChallenge?branchName=master)](https://dev.azure.com/EamonnReilly/TurtleChallenge/_build/latest?definitionId=2&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/EamonnReilly/TurtleChallenge/2.svg)
