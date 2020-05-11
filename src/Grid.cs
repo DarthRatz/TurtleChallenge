@@ -14,7 +14,7 @@ namespace TurtleChallenge
         public Grid(int width, int height){
             this.width = width;
             this.height = height;
-        }        
+        }
 
         public override string ToString()
         {

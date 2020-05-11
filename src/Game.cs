@@ -9,7 +9,7 @@ namespace TurtleChallenge
     {
         readonly XmlSerializer serializer = new XmlSerializer(typeof(Game));
         private FileStream fs;
-        
+
         internal List<Mine> mines1;
         internal Exit exit1;
         internal Turtle turtle1;
@@ -27,7 +27,7 @@ namespace TurtleChallenge
         public List<Mine> Mines { get => mines1; set => mines1 = value; }
 
         public Game(string filename)
-        {            
+        {
             this.GameState = GamesState.Playing;
             OpenResource(filename);
 
@@ -129,11 +129,11 @@ namespace TurtleChallenge
     }
 
     [Flags]
-    public enum GamesState { 
+    public enum GamesState {
         Playing = 0,
         OutOfBounds = 1,
-        Success = 2, 
-        MineHit = 3, 
-        StillInDanger = 4 
+        Success = 2,
+        MineHit = 3,
+        StillInDanger = 4
     }
 }

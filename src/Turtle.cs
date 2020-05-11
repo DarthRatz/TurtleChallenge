@@ -43,10 +43,10 @@ namespace TurtleChallenge
     }
 
     [Flags]
-    public enum Direction { 
+    public enum Direction {
         North = 0,
-        East = 1, 
-        South = 2, 
-        West = 3 
+        East = 1,
+        South = 2,
+        West = 3
     }
 }

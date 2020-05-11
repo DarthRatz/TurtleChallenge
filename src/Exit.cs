@@ -9,6 +9,6 @@ namespace TurtleChallenge
         }
 
         public Position Position { get => position; set => position = value; }
-        public bool Reached { get => reached; set => reached = value; }        
+        public bool Reached { get => reached; set => reached = value; }
     }
 }

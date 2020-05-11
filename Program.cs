@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-    
+
 namespace TurtleChallenge
 {
     class Program
@@ -18,7 +18,7 @@ namespace TurtleChallenge
                     break;
                 }
             }
-            
+
             if(game.GameState == GamesState.Playing){
                 game.GameState = GamesState.StillInDanger;
             }

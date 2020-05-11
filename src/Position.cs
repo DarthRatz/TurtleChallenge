@@ -5,9 +5,9 @@ namespace TurtleChallenge
     public class Position : IEquatable<Position>{
         internal int x;
         internal int y;
-        
+
         internal Position(){
-        }    
+        }
 
         public int X { get => x; set => x = value; }
         public int Y { get => y; set => y = value; }
@@ -19,7 +19,7 @@ namespace TurtleChallenge
 
         public override string ToString(){
             return "X:" + X.ToString() + " Y:" + Y.ToString();
-        }      
+        }
 
         public bool Equals(Position other)
         {

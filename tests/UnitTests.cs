@@ -26,7 +26,7 @@ namespace TurtleChallenge
             Turtle t1 = new Turtle();
             t1.Position = new Position(1,1);
             t1.Direction = Direction.North;
-            
+
             t1.Move();
             Assert.Equal(new Position(1,2), t1.Position);
             t1.Rotate();
@@ -72,7 +72,7 @@ namespace TurtleChallenge
         public static void GridTest()
         {
             Grid g1 = new Grid(2,4);
-            
+
             Assert.Equal(2, g1.width);
             Assert.Equal(4, g1.height);
 
@@ -91,7 +91,7 @@ namespace TurtleChallenge
                     break;
                 }
             }
-            
+
             if(g1.GameState == GamesState.Playing){
                 g1.GameState = GamesState.StillInDanger;
             }
@@ -111,7 +111,7 @@ namespace TurtleChallenge
                     break;
                 }
             }
-            
+
             if(g1.GameState == GamesState.Playing){
                 g1.GameState = GamesState.StillInDanger;
             }
@@ -131,7 +131,7 @@ namespace TurtleChallenge
                     break;
                 }
             }
-            
+
             if(g1.GameState == GamesState.Playing){
                 g1.GameState = GamesState.StillInDanger;
             }
@@ -151,7 +151,7 @@ namespace TurtleChallenge
                     break;
                 }
             }
-            
+
             if(g1.GameState == GamesState.Playing){
                 g1.GameState = GamesState.StillInDanger;
             }
